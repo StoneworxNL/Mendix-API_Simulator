@@ -28,9 +28,15 @@ You can run the API simulator as part of your Mendix app or in a separate app ba
 ## Usage
 1. Connect your developer/administrator user role to the Developer module role
 2. Connect the "IncomingRequest_Overview" page to your navigation
-3. Start by sending HTTP requests to <http(s)://yourappurl>/rest/mockservice/<anypath>
+3. Start by sending HTTP requests to <http(s)://yourappurl>/rest/apisimulator/<anypath>
 
 Note: More documentation can be found in the "Documentation" tab which is available on the aforementioned landing page
+
+## Demo
+https://stoneworx-api-simulator-sandbox.mxapps.io/index.html?profile=Responsive
+
+NOTE: Do not use for/connect to production environments. If you send any data to the demo endpoint it will be stored and publicly available until the "Delete All" button is clicked!
+Side note: if the overview is empty because someone did use the "Delete all" button, use the "Run demo" button to restore the demo data
 
 ## Issues, suggestions and feature requests
 https://github.com/StoneworxNL/Mendix-API_Simulator/issues
