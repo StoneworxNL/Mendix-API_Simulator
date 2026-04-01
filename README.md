@@ -16,7 +16,7 @@ You can run the API simulator as part of your Mendix app or in a separate app ba
 + CommunityCommons
 
 ## Key features
-+ Configure relative endpoints up to 5 levels deep.
++ Configure relative endpoints up to 9 levels deep.
 + Supports the following HTTP methods: GET, POST, PUT, DELETE.
 + Configure multiple response templates for each layer and supported HTTP Method.
 + Supports variables in response templates to generate dynamic contents for responses.
