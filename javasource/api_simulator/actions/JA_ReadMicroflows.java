@@ -10,7 +10,6 @@
 package api_simulator.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IDataType;
 import com.mendix.systemwideinterfaces.core.IDataType.DataTypeEnum;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
@@ -21,8 +20,9 @@ import java.util.Map.Entry;
 import api_simulator.proxies.Microflow;
 import api_simulator.proxies.Request;
 import com.mendix.core.Core;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
-public class JA_ReadMicroflows extends CustomJavaAction<java.util.List<IMendixObject>>
+public class JA_ReadMicroflows extends UserAction<java.util.List<IMendixObject>>
 {
 	public JA_ReadMicroflows(IContext context)
 	{
@@ -33,7 +33,7 @@ public class JA_ReadMicroflows extends CustomJavaAction<java.util.List<IMendixOb
 	public java.util.List<IMendixObject> executeAction() throws Exception
 	{
 		// BEGIN USER CODE
-		List<IMendixObject> microflowList = new ArrayList();
+		List<IMendixObject> microflowList = new ArrayList<IMendixObject>();
 		IContext c = getContext();
 
 		for(String mf : Core.getMicroflowNames())

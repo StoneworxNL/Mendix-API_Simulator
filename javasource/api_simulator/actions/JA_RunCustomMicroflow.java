@@ -10,30 +10,35 @@
 package api_simulator.actions;
 
 import com.mendix.systemwideinterfaces.core.IContext;
-import com.mendix.webui.CustomJavaAction;
 import com.mendix.systemwideinterfaces.core.IMendixObject;
 import com.mendix.core.Core;
 import java.util.Map;
 import java.util.LinkedHashMap;
+import com.mendix.systemwideinterfaces.core.UserAction;
 
-public class JA_RunCustomMicroflow extends CustomJavaAction<java.lang.Void>
+public class JA_RunCustomMicroflow extends UserAction<java.lang.Void>
 {
-	private java.lang.String MicroflowName;
-	private IMendixObject __Request;
-	private api_simulator.proxies.Request Request;
+	private final java.lang.String MicroflowName;
+	/** @deprecated use Request.getMendixObject() instead. */
+	@java.lang.Deprecated(forRemoval = true)
+	private final IMendixObject __Request;
+	private final api_simulator.proxies.Request Request;
 
-	public JA_RunCustomMicroflow(IContext context, java.lang.String MicroflowName, IMendixObject Request)
+	public JA_RunCustomMicroflow(
+		IContext context,
+		java.lang.String _microflowName,
+		IMendixObject _request
+	)
 	{
 		super(context);
-		this.MicroflowName = MicroflowName;
-		this.__Request = Request;
+		this.MicroflowName = _microflowName;
+		this.__Request = _request;
+		this.Request = _request == null ? null : api_simulator.proxies.Request.initialize(getContext(), _request);
 	}
 
 	@java.lang.Override
 	public java.lang.Void executeAction() throws Exception
 	{
-		this.Request = this.__Request == null ? null : api_simulator.proxies.Request.initialize(getContext(), __Request);
-
 		// BEGIN USER CODE
 		Map<String, Object> params = new LinkedHashMap<String, Object>();				
 		params.put("Request", Request.getMendixObject());
